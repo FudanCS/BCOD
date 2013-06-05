@@ -74,6 +74,9 @@ public:
 	//void printFilledKey(); //print all the N that are used
 	void customWrite(std::string str);  //User can define customOutput
 
+	//return true if ItemSquare is orthogonal
+	bool isOrthogonal();
+
 };
 
 #endif

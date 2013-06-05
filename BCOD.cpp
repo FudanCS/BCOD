@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include "BCOD.h"
+#include "complex0.h"
 
 BCOD::BCOD(int m)
 {
@@ -789,4 +790,84 @@ bool BCOD::isNotInFilledKey(int candidateN)
 int BCOD::FilledKeySize()
 {
 	return filledKey.size();
+}
+
+bool BCOD::isOrthogonal()
+{
+	//Assign value
+	for(int i = 0; i < rowWarden; i++)
+	{
+		for(int j = 0; j < crossWarden; j++)
+		{
+			if(!ItemSquare[i][j].IsUNK() && !ItemSquare[i][j].IsZero())
+			{
+				if(!ItemSquare[i][j].GetIsConjugate())
+				{
+					if(ItemSquare[i][j].GetIsPositive())
+					{
+						double real = ItemSquare[i][j].GetSerialNumber();
+						double imaginary = 2.0f;
+						complex c(real, imaginary);
+						ItemSquare[i][j].SetValue(c);
+					}
+					else
+					{
+						double real = ItemSquare[i][j].GetSerialNumber();
+						double imaginary = 2.0f;
+						complex c(-real, -imaginary);
+						ItemSquare[i][j].SetValue(c);
+					}
+
+				}
+				else
+				{
+					if(ItemSquare[i][j].GetIsPositive())
+					{
+						double real = ItemSquare[i][j].GetSerialNumber();
+						double imaginary = -2.0f;
+						complex c(real, imaginary);
+						ItemSquare[i][j].SetValue(c);
+					}
+					else
+					{
+						double real = ItemSquare[i][j].GetSerialNumber();
+						double imaginary = -2.0f;
+						complex c(-real, -imaginary);
+						ItemSquare[i][j].SetValue(c);
+					}
+
+				}
+
+			}
+			else if(ItemSquare[i][j].IsZero())
+			{
+				complex c(0, 0);
+				ItemSquare[i][j].SetValue(c);
+			}
+		}
+	}
+
+	bool isOrthogonal = true;
+	for(int i = 0; i < crossWarden; i++)
+	{
+		for(int k = i + 1; k < crossWarden; k++)
+		{
+			complex total(0, 0);
+			for(int j = 0; j < rowWarden; j++)
+			{
+				complex temp = ~(ItemSquare[j][i].GetValue()) * (ItemSquare[j][k].GetValue());
+				total = total + temp;
+			}
+
+			complex criteria(0, 0);
+			if(!(total == criteria))
+			{
+				isOrthogonal = false;
+				return isOrthogonal;
+			}
+		}
+	}
+
+	return isOrthogonal;
+
 }

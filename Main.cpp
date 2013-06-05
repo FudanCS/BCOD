@@ -62,8 +62,13 @@ int main(void)
 	//	bcod->customWrite("UpdateFilledKey");
 	//	bcod->write();
 	}
-	
 
+	if(bcod->isOrthogonal())
+		bcod->customWrite("Square IS orthogonal.");
+	else
+		bcod->customWrite("Square IS NOT orthogonal.");
+	
+	delete bcod;
 
 	return 0;
 }

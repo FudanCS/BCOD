@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include "complex0.h"
 
 //every element in the square
 //four attributes:
@@ -18,6 +19,7 @@ private:
 	bool IsConjugate;
 	std::string content;
 	int serialNumber;
+	complex value;
 
 public:
 
@@ -104,6 +106,16 @@ public:
 		std::string output = blank + positiveFlag + content + number + conjugateFlag + lastblank;
 
 		return output;
+	}
+
+	void SetValue(complex c)
+	{
+		value = c;
+	}
+
+	complex GetValue()
+	{
+		return value;
 	}
 
 	//Getters and Setters
