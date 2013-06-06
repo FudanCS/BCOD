@@ -645,7 +645,7 @@ void BCOD::FillZoneD()
 
 int BCOD::SearchNextFillingNumber()
 {
-	int candidateN = 1000;
+	int candidateN = -1;
 
 	for(int i = 0; i < m; i++)
 	{
@@ -657,10 +657,10 @@ int BCOD::SearchNextFillingNumber()
 		}
 	}
 
-	if(candidateN >= 1000)
+	if(candidateN <= 0)
 	{
 		std::cout << "An error occurred." << std::endl;
-		std::cout << "Next N is " << candidateN << " which is too large. Not expected." << std::endl;
+		std::cout << "Cannot find next N. Not Expected." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
 		exit(0);
 	}
@@ -848,6 +848,7 @@ bool BCOD::isOrthogonal()
 	}
 
 	bool isOrthogonal = true;
+	//Matrix Multiply
 	for(int i = 0; i < crossWarden; i++)
 	{
 		for(int k = i + 1; k < crossWarden; k++)
