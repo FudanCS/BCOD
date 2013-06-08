@@ -11,6 +11,10 @@ BCOD::BCOD(int m)
 		std::cout << "Invalid m received." << std::endl;
 		std::cout << "0 < m < 10 is accepted." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Invalid m received." << std::endl;
+		outfile << "0 < m < 10 is accepted." << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -126,14 +130,25 @@ void BCOD::RowExchange(int rowX, int rowY)
 	if(rowX < 0 || rowX > rowWarden)
 	{
 		std::cout << "rowX should be 0 < rowX < " << rowWarden << std::endl;
+		std::cout << "Unexpected rowX : " << rowX << " received." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "rowX should be 0 < rowX < " << rowWarden << std::endl;
+		outfile << "Unexpected rowX : " << rowX << " received." << std::endl;
+		outfile << "Program Terminated." << std::endl;
+
 		exit(0);
 	}
 
 	if(rowY < 0 || rowY > rowWarden)
 	{
 		std::cout << "rowY should be 0 < rowY < " << rowWarden << std::endl;
+		std::cout << "Unexpected rowY : " << rowY << " received." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "rowX should be 0 < rowY < " << rowWarden << std::endl;
+		outfile << "Unexpected rowY : " << rowY << " received." << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -157,14 +172,24 @@ void BCOD::CrossExchange(int crossX, int crossY)
 	if(crossX < 0 || crossX > crossWarden)
 	{
 		std::cout << "crossX should be 0 < crossX < " << crossWarden << std::endl;
+		std::cout << "Unexpected crossX : " << crossX << " received." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "crossX should be 0 < crossX < " << crossWarden << std::endl;
+		outfile << "Unexpected crossX : " << crossX << " received." << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(crossY < 0 || crossY > crossWarden)
 	{
 		std::cout << "crossY should be 0 < crossY < " << crossWarden << std::endl;
+		std::cout << "Unexpected crossY : " << crossY << " received." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "crossY should be 0 < crossY < " << crossWarden << std::endl;
+		outfile << "Unexpected crossY : " << crossY << " received." << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -187,15 +212,21 @@ bool BCOD::FindElementInRow_Conjugate(int rowX, int elementSerialNumber)
 {
 	if(rowX < 0 || rowX > rowWarden)
 	{
-		std::cout << "Illegal Argument rowX." << std::endl;
+		std::cout << "Illegal Argument rowX : " << rowX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument rowX : " << rowX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -217,15 +248,21 @@ bool BCOD::FindElementInRow_InConjugate(int rowX, int elementSerialNumber)
 {
 	if(rowX < 0 || rowX > rowWarden)
 	{
-		std::cout << "Illegal Argument rowX." << std::endl;
+		std::cout << "Illegal Argument rowX : " << rowX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument rowX : " << rowX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -247,15 +284,21 @@ bool BCOD::FindElementInRow_NotConjugateSensitive(int rowX, int elementSerialNum
 {
 	if(rowX < 0 || rowX > rowWarden)
 	{
-		std::cout << "Illegal Argument rowX." << std::endl;
+		std::cout << "Illegal Argument rowX : " << rowX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument rowX : " << rowX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -277,15 +320,21 @@ bool BCOD::FindElementInCross_Conjugate(int crossX, int elementSerialNumber)
 {
 	if(crossX < 0 || crossX > crossWarden)
 	{
-		std::cout << "Illegal Argument crossX." << std::endl;
+		std::cout << "Illegal Argument crossX : " << crossX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+        outfile << "Illegal Argument crossX : " << crossX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -307,15 +356,21 @@ bool BCOD::FindElementInCross_InConjugate(int crossX, int elementSerialNumber)
 {
 	if(crossX < 0 || crossX > crossWarden)
 	{
-		std::cout << "Illegal Argument crossX." << std::endl;
+		std::cout << "Illegal Argument crossX : " << crossX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+        outfile << "Illegal Argument crossX : " << crossX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -337,15 +392,21 @@ bool BCOD::FindElementInCross_NotConjugateSensitive(int crossX, int elementSeria
 {
 	if(crossX < 0 || crossX > crossWarden)
 	{
-		std::cout << "Illegal Argument crossX." << std::endl;
+		std::cout << "Illegal Argument crossX : " << crossX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+        outfile << "Illegal Argument crossX : " << crossX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -367,15 +428,21 @@ int BCOD::FindRowNoInCross_NotConjugateSensitive(int crossX, int elementSerialNu
 {
 	if(crossX < 0 || crossX > crossWarden)
 	{
-		std::cout << "Illegal Argument crossX." << std::endl;
+		std::cout << "Illegal Argument crossX : " << crossX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+        outfile << "Illegal Argument crossX : " << crossX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
 	if(elementSerialNumber <= 0)
 	{
-		std::cout << "Illegal Argument elementSerialNumber." << std::endl;
+		std::cout << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument elementSerialNumber : " << elementSerialNumber << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -396,8 +463,11 @@ void BCOD::MultiplyRow(int rowX, int times)
 {
 	if(rowX < 0 || rowX > rowWarden)
 	{
-		std::cout << "Illegal Argument rowX." << std::endl;
+		std::cout << "Illegal Argument rowX : " << rowX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "Illegal Argument rowX : " << rowX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -413,8 +483,11 @@ void BCOD::MultiplyCross(int crossX, int times)
 {
 	if(crossX < 0 || crossX > crossWarden)
 	{
-		std::cout << "Illegal Argument crossX." << std::endl;
+		std::cout << "Illegal Argument crossX : " << crossX << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+        outfile << "Illegal Argument crossX : " << crossX << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
@@ -539,16 +612,6 @@ void BCOD::FillZoneB()
 		}
 	}
 
-	//Debug output
-// 	std::cout << "123" << std::endl;
-// 	 	for(int i = 0; i < 20; i++)
-// 	 	{
-// 	 		for(int j = 0; j < 20; j++)
-// 	 			std::cout << tempSquare[i][j].toString();
-// 	 
-// 	 		std::cout << std::endl;
-// 	 	}
-
 	//Search the used number in the whole right part
 	//if the number is used, we store it in the usedNumber Array
 	for(int i = crossWarden / 2; i < crossWarden; i++)
@@ -561,8 +624,6 @@ void BCOD::FillZoneB()
 	}
 
 	usedNumber[ItemSquare[m][m].GetSerialNumber() - 1] = true;
-
-//	std::cout << "123" << std::endl;
 
 	//Finally we fill the unknown a[i][j]
 	for(std::vector<Item*>::iterator iter = UNKList.begin(); iter != UNKList.end(); iter += 2) //We store two at the same time
@@ -587,21 +648,6 @@ void BCOD::FillZoneB()
 		}
 	}
 
-// 	for(std::vector<Item*>::iterator iter = UNKList.begin(); iter != UNKList.end(); iter++)
-// 	{
-// 		std::cout << (*iter)->toString() << std::endl;
-// 	}
-// 	std::cout << "123" << std::endl;
-	//Debug output
-	//std::cout << "123" << std::endl;
-// 	for(int i = 0; i < 20; i++)
-// 	{
-// 		for(int j = 0; j < 20; j++)
-// 			std::cout << tempSquare[i][j].toString();
-// 
-// 		std::cout << std::endl;
-// 	}
-
 	//Last step, we write the tempSquare back to the ItemSquare
 	for(int i = 0; i < m; i++)
 	{
@@ -610,8 +656,6 @@ void BCOD::FillZoneB()
 			ItemSquare[i][j + m] = tempSquare[i][j];
 		}
 	}
-
-	//std::cout << "123" << std::endl;
 }
 
 void BCOD::FillZoneC()
@@ -662,6 +706,10 @@ int BCOD::SearchNextFillingNumber()
 		std::cout << "An error occurred." << std::endl;
 		std::cout << "Cannot find next N. Not Expected." << std::endl;
 		std::cout << "Program Terminated." << std::endl;
+		//Write to log
+		outfile << "An error occurred." << std::endl;
+		outfile << "Cannot find next N. Not Expected." << std::endl;
+		outfile << "Program Terminated." << std::endl;
 		exit(0);
 	}
 
