@@ -701,7 +701,7 @@ int BCOD::SearchNextFillingNumber()
 		}
 	}
 
-	if(candidateN <= 0)
+	if(candidateN < 0)
 	{
 		std::cout << "An error occurred." << std::endl;
 		std::cout << "Cannot find next N. Not Expected." << std::endl;
