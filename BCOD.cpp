@@ -689,7 +689,7 @@ void BCOD::FillZoneD()
 
 int BCOD::SearchNextFillingNumber()
 {
-	int candidateN = -1;
+	int candidateN = 1000;
 
 	for(int i = 0; i < m; i++)
 	{
@@ -701,7 +701,7 @@ int BCOD::SearchNextFillingNumber()
 		}
 	}
 
-	if(candidateN < 0)
+	if(candidateN >= 1000)
 	{
 		std::cout << "An error occurred." << std::endl;
 		std::cout << "Cannot find next N. Not Expected." << std::endl;
